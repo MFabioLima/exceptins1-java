@@ -40,6 +40,11 @@ public class Programa {
 			
 			Reservas.updareDatas(checkIn,checkOut);
 			System.out.println("Reservayion: "+ Reservas);
+			
+			System.out.println();
+			System.out.println();
+			 
+
 		}
 		
 		sc.close();
