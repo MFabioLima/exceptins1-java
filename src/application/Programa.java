@@ -28,6 +28,18 @@ public class Programa {
 		else {
 			Reservas Reservas = new Reservas(number, checkIn, checkOut);
 			System.out.println("Reservayion: "+ Reservas);
+			
+			System.out.println();
+			System.out.println("Entre data to updade the reservation: ");
+			
+			System.out.print("Check-in Date (dd/MM/yyyy)");
+			checkIn =sdf.parse(sc.next());
+			
+			System.out.print("Check-ou Date (dd/MM/yyyy)");
+			checkOut =sdf.parse(sc.next());
+			
+			Reservas.updareDatas(checkIn,checkOut);
+			System.out.println("Reservayion: "+ Reservas);
 		}
 		
 		sc.close();
