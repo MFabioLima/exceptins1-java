@@ -5,6 +5,9 @@ import java.time.zone.ZoneOffsetTransitionRule.TimeDefinition;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+//import com.sun.org.apache.bcel.internal.generic.RETURN;
+import com.sun.source.doctree.ReturnTree;
+
 public class Reservas {
 
 	private Integer roomNumbre;
@@ -38,8 +41,11 @@ public class Reservas {
 	}
 	
 	public void updareDatas(Date checkIn, Date checkOut) {
+		
+	
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
+		//return null;
 	}
 	
 	public String toString() {

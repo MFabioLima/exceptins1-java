@@ -19,11 +19,12 @@ public class Programa {
 		System.out.print("Check-in Date (dd/MM/yyyy)");
 		Date checkIn =sdf.parse(sc.next());
 		
+
 		System.out.print("Check-ou Date (dd/MM/yyyy)");
 		Date checkOut =sdf.parse(sc.next());
-		
-		if (!checkOut.after(checkIn)) {
-			System.out.println("Error in reservation: Check-out date be after check-im date");
+				
+	 	if(!checkOut.after(checkIn)) {	 		
+		    System.out.println("Error in reservation: Check-out date be after check-im date");
 		}
 		else {
 			Reservas Reservas = new Reservas(number, checkIn, checkOut);
@@ -38,13 +39,17 @@ public class Programa {
 			System.out.print("Check-ou Date (dd/MM/yyyy)");
 			checkOut =sdf.parse(sc.next());
 			
-			Reservas.updareDatas(checkIn,checkOut);
-			System.out.println("Reservayion: "+ Reservas);
-			
-			System.out.println();
-			System.out.println();
-			 
-
+			Date now = new Date();						
+			if ( checkIn.before(now) || checkOut.before(now) ) {
+				System.out.println("Error in reservation: Reservation dates for updade  must be future dates");
+			}
+			else if(!checkOut.after(checkIn)) {	 		
+			    System.out.println("Error in reservation: Check-out date be after check-im date");
+			}
+			else {			
+			     Reservas.updareDatas(checkIn,checkOut);
+			     System.out.println("Reservayion: "+ Reservas);
+			}	
 		}
 		
 		sc.close();
